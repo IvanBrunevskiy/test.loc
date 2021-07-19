@@ -1,0 +1,11 @@
+uuid: d832dde4-feab-4138-a2f8-76b863492295
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.zhanr
+id: taxonomy_term.zhanr
+target_entity_type_id: taxonomy_term
+target_bundle: zhanr
+default_langcode: site_default
+language_alterable: false

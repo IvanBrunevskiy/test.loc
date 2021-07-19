@@ -1,0 +1,29 @@
+uuid: a6a2b367-1ea4-426b-8fe1-b6bbc4ee5d33
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genre
+    - node.type.book
+    - taxonomy.vocabulary.zhanr
+id: node.book.field_genre
+field_name: field_genre
+entity_type: node
+bundle: book
+label: Жанр
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      zhanr: zhanr
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
