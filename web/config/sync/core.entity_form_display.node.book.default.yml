@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.book.field_book_date_of_issue
     - field.field.node.book.field_book_date_of_signing
     - field.field.node.book.field_book_isbn
+    - field.field.node.book.field_genre
     - image.style.thumbnail
     - node.type.book
   module:
@@ -79,6 +80,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_genre:
+    weight: 37
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   langcode:
     type: language_select
