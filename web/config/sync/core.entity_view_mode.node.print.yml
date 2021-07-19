@@ -1,0 +1,15 @@
+uuid: 37df07fe-3787-401d-8d3e-ce3597e462c2
+langcode: ru
+status: false
+dependencies:
+  enforced:
+    module:
+      - book
+  module:
+    - node
+_core:
+  default_config_hash: ERjobPGdPFAM9p5cmQIcJzk-0cY-1mE1OV_pKmMlJaE
+id: node.print
+label: Print
+targetEntityType: node
+cache: true
