@@ -1,0 +1,25 @@
+uuid: e5ff3962-3ba5-4ba8-b7dd-a1c080f39c0a
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b430fefd-5172-4798-b484-eada97db6bba'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: interesnoevtekhnologiyakh
+theme: bartik
+region: sidebar_second
+weight: -5
+provider: null
+plugin: 'block_content:b430fefd-5172-4798-b484-eada97db6bba'
+settings:
+  id: 'block_content:b430fefd-5172-4798-b484-eada97db6bba'
+  label: 'Интересное в технологиях'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: e9a5df97-cfe8-4d18-a3d3-7e0a6bacae7f
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:00f93be1-9c0a-4cb1-af54-3e54a2c846c5'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: covid19
+theme: bartik
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'block_content:00f93be1-9c0a-4cb1-af54-3e54a2c846c5'
+settings:
+  id: 'block_content:00f93be1-9c0a-4cb1-af54-3e54a2c846c5'
+  label: Covid19
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

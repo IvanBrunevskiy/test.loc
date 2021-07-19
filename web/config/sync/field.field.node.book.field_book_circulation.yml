@@ -1,0 +1,23 @@
+uuid: 54879ae3-89b0-4414-9fa9-96a0427f4dde
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_circulation
+    - node.type.book
+id: node.book.field_book_circulation
+field_name: field_book_circulation
+entity_type: node
+bundle: book
+label: Тираж
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
