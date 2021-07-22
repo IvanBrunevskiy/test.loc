@@ -1,26 +1,26 @@
-uuid: a6a2b367-1ea4-426b-8fe1-b6bbc4ee5d33
-langcode: ru
+uuid: da286313-4432-483d-a2ea-681da8cec5ed
+langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_genre
+    - field.storage.node.field_tags
     - node.type.book
-    - taxonomy.vocabulary.zhanr
-id: node.book.field_genre
-field_name: field_genre
+    - taxonomy.vocabulary.genres
+id: node.book.field_tags
+field_name: field_tags
 entity_type: node
 bundle: book
-label: Жанр
+label: Tags
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      zhanr: zhanr
+      genres: genres
     sort:
       field: name
       direction: asc

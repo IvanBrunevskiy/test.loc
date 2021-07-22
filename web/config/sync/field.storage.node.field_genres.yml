@@ -1,12 +1,12 @@
-uuid: 01e1974a-0388-478d-bf36-7fe359ef06ce
-langcode: ru
+uuid: c370e836-8c63-490e-b5cf-08914add74e6
+langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_genre
-field_name: field_genre
+id: node.field_genres
+field_name: field_genres
 entity_type: node
 type: entity_reference
 settings:
