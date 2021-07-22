@@ -1,0 +1,11 @@
+uuid: ca551418-9123-4072-af5b-d7c3f0862df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.genres
+id: taxonomy_term.genres
+target_entity_type_id: taxonomy_term
+target_bundle: genres
+default_langcode: site_default
+language_alterable: false
