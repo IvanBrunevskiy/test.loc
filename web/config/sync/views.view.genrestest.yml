@@ -128,10 +128,10 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
-        field_genre:
-          id: field_genre
-          table: node__field_genre
-          field: field_genre
+        field_genres:
+          id: field_genres
+          table: node__field_genres
+          field: field_genres
           relationship: reverse__node__field_genre
           group_type: count
           admin_label: ''
@@ -179,11 +179,11 @@ display:
           set_precision: false
           precision: 0
           decimal: .
-          separator: ','
+          separator: ', '
           format_plural: 0
           format_plural_string: !!binary MQNAY291bnQD
-          prefix: (
-          suffix: )
+          prefix: ''
+          suffix: ''
           click_sort_column: target_id
           type: entity_reference_label
           settings: {  }
