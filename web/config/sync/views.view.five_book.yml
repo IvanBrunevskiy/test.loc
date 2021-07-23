@@ -3,16 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-<<<<<<< HEAD
     - field.storage.node.field_book_cover
     - image.style.pix_134
     - node.type.book
   module:
     - image
-=======
-    - node.type.book
-  module:
->>>>>>> e638dd3a0843feefca095874283e712fe228f97d
     - node
     - user
 id: five_book
@@ -127,7 +122,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-<<<<<<< HEAD
         field_book_cover:
           id: field_book_cover
           table: node__field_book_cover
@@ -192,8 +186,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-=======
->>>>>>> e638dd3a0843feefca095874283e712fe228f97d
       filters:
         status:
           value: '1'
@@ -285,12 +277,8 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-<<<<<<< HEAD
       tags:
         - 'config:field.storage.node.field_book_cover'
-=======
-      tags: {  }
->>>>>>> e638dd3a0843feefca095874283e712fe228f97d
   block_1:
     display_plugin: block
     id: block_1
@@ -306,9 +294,5 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-<<<<<<< HEAD
       tags:
         - 'config:field.storage.node.field_book_cover'
-=======
-      tags: {  }
->>>>>>> e638dd3a0843feefca095874283e712fe228f97d
