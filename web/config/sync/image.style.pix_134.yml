@@ -1,0 +1,14 @@
+uuid: 14191723-4845-4010-a362-d67016a63cab
+langcode: en
+status: true
+dependencies: {  }
+name: pix_134
+label: pix_134
+effects:
+  54e5a73b-90f7-440a-8022-720895332bde:
+    uuid: 54e5a73b-90f7-440a-8022-720895332bde
+    id: image_resize
+    weight: 1
+    data:
+      width: 134
+      height: 134
