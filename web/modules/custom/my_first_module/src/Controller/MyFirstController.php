@@ -4,10 +4,12 @@ namespace Drupal\my_first_module\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
-class MyFirstController extends ControllerBase
-{
-public function hello(){
-  $array['#markup'] = 'Hello World';
-  return $array;
-}
+/**
+ * This function displays on the page 'Hello Word'.
+ */
+class MyFirstController extends ControllerBase {
+  public function hello_world() {
+    $output['#markup'] = 'Hello World';
+    return $output;
+  }
 }
