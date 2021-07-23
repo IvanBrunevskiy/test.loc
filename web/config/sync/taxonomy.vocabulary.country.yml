@@ -1,8 +1,0 @@
-uuid: ffdc8335-f3b9-4901-a7d8-bce82181ca49
-langcode: ru
-status: true
-dependencies: {  }
-name: Country
-vid: country
-description: ''
-weight: 0
