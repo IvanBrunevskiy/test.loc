@@ -1,0 +1,20 @@
+uuid: 30a9da2f-b483-40e1-8af2-4b58a1dd53e2
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_book_circulation
+field_name: field_book_circulation
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
