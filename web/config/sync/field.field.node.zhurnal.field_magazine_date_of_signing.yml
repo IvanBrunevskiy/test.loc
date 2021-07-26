@@ -1,0 +1,21 @@
+uuid: 0b7b8c89-1f23-4c01-a0ba-d0996b65f3a5
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_date_of_signing
+    - node.type.zhurnal
+  module:
+    - datetime
+id: node.zhurnal.field_magazine_date_of_signing
+field_name: field_magazine_date_of_signing
+entity_type: node
+bundle: zhurnal
+label: 'Дата подписания в тираж'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

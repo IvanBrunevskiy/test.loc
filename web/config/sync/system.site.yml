@@ -1,0 +1,14 @@
+uuid: 404816ac-25c2-42a6-9396-1f9a55f22437
+name: test.loc
+mail: test.loc@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: ru
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
