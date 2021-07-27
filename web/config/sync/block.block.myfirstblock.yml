@@ -1,0 +1,20 @@
+uuid: 86602210-da52-41a5-8494-9f83ba08b56d
+langcode: en
+status: true
+dependencies:
+  module:
+    - my_first_module
+  theme:
+    - bartik
+id: myfirstblock
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: my_first_block
+settings:
+  id: my_first_block
+  label: 'My first block'
+  provider: my_first_module
+  label_display: visible
+visibility: {  }
