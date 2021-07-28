@@ -14,9 +14,14 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class MyFirstBlock extends BlockBase {
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     return [
-      '#markup' => $this->t('Hello, World!'),
+      '#theme' => 'myfirst',
+      '#title' => 'My block',
+      '#description' => 'Hello world'
     ];
   }
 }
