@@ -40,6 +40,7 @@ module:
   menu_ui: 0
   module_filter: 0
   my_first_module: 0
+  my_modul_block: 0
   node: 0
   options: 0
   page_cache: 0
