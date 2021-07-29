@@ -4,9 +4,9 @@
  * Implements hook_theme().
  */
 function my_first_module_theme() {
-  return array(
-      'myfirst' => array(
-      'variables' => array('title' => NULL, 'description' => NULL),
-    ),
-  );
+  return [
+      'myfirst' => [
+      'variables' => ['title' => NULL, 'description' => NULL,],
+    ],
+  ];
 }

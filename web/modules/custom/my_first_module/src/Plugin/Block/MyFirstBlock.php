@@ -13,6 +13,7 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("Hello World"),
  * )
  */
+
 class MyFirstBlock extends BlockBase {
   /**
    * {@inheritdoc}
@@ -21,7 +22,7 @@ class MyFirstBlock extends BlockBase {
     return [
       '#theme' => 'myfirst',
       '#title' => 'My block',
-      '#description' => 'Hello world'
+      '#description' => 'Hello world',
     ];
   }
 }
