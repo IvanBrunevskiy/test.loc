@@ -1,4 +1,4 @@
-name: 'My_first_module'
+name: 'My_task95_module'
 description: 'Create my page'
 core: 8.x
 core_version_requirement: ^8 || ^9

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - my_first_module
+    - my_task95_module
   theme:
     - bartik
 id: myfirstblock
@@ -15,6 +15,6 @@ plugin: my_first_block
 settings:
   id: my_first_block
   label: 'My first block'
-  provider: my_first_module
+  provider: my_task95_module
   label_display: '0'
 visibility: {  }

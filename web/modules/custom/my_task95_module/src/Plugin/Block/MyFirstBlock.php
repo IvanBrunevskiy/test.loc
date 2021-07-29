@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\my_first_module\Plugin\Block;
+namespace Drupal\my_task95_module\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
@@ -8,8 +8,8 @@ use Drupal\Core\Block\BlockBase;
  * Provides a 'Hello' Block.
  *
  * @Block(
- *   id = "my_first_block",
- *   admin_label = @Translation("My first block"),
+ *   id = "task_95_block",
+ *   admin_label = @Translation("Task 95 block"),
  *   category = @Translation("Hello World"),
  * )
  */
@@ -20,7 +20,7 @@ class MyFirstBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'myfirst',
+      '#theme' => 'block_task_95',
       '#title' => 'My block',
       '#description' => 'Hello world',
     ];

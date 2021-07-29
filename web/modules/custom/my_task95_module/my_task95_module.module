@@ -3,9 +3,9 @@
 /**
  * Implements hook_theme().
  */
-function my_first_module_theme() {
+function my_task95_module_theme() {
   return [
-      'myfirst' => [
+      'block_task_95' => [
       'variables' => ['title' => NULL, 'description' => NULL,],
     ],
   ];
