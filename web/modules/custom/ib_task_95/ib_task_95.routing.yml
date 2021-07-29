@@ -1,7 +1,7 @@
-my_first_module.routing:
+ib_task_95.routing:
   path: '/my-first-page'
   defaults:
     _title: 'My first module'
-    _controller: '\Drupal\my_first_module\Controller\MyFirstController::hello_world'
+    _controller: '\Drupal\ib_task_95\Controller\MyFirstController::hello_world'
   requirements:
     _permission: 'access content'
