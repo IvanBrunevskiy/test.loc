@@ -1,4 +1,4 @@
-name: 'My_task95_module'
+name: 'ib_task_95'
 description: 'Create my page'
 core: 8.x
 core_version_requirement: ^8 || ^9

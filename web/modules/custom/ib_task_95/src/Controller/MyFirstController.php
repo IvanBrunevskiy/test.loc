@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\my_task95_module\Controller;
+namespace Drupal\ib_task_95\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
