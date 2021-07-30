@@ -7,11 +7,12 @@
 <div class="my-class">
   <h1>{{ title }}</h1>
 
-  {% for results in result %}
+  {% for results in resultArr %}
     <p>Title - {{ results.title }}</p>
-    <p>Created - {{ results.created|date("d/m/Y") }}</p>
+    <p>Created - {{ results.created }}</p>
     <br>
   {% endfor %}
+
 
 </div>
 

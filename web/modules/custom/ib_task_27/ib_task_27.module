@@ -6,7 +6,11 @@
 function ib_task_27_theme() {
   return [
       'page_ib_task_27' => [
-      'variables' => ['title' => NULL, 'result' => NULL,],
+      'variables' => [
+        'title' => NULL,
+        'resultArr' => NULL,
+        'created' => NULL,
+        ],
     ],
   ];
 }
