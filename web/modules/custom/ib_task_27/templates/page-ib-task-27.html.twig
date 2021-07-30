@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Profile custom block.
+ */
+#}
+<div class="my-class">
+  <h1>{{ title }}</h1>
+
+  {% for results in result %}
+    <p>Title - {{ results.title }}</p>
+    <p>Created - {{ results.created|date("d/m/Y") }}</p>
+    <br>
+  {% endfor %}
+
+</div>
+
+
