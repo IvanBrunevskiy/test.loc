@@ -1,0 +1,20 @@
+uuid: dc74d72f-369c-4869-a497-5c8af698caa2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ib_task_95
+  theme:
+    - bartik
+id: ibtask95block
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: ib-task_95_block
+settings:
+  id: ib-task_95_block
+  label: 'ib Task 95 block'
+  provider: ib_task_95
+  label_display: '0'
+visibility: {  }
