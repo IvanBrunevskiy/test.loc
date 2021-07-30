@@ -15,15 +15,14 @@ class IbTask27Controller extends ControllerBase {
     $query->range(0, 5);
     $result = $query->execute()->fetchAll();
 
-    foreach ($result as $key => $res){
+    foreach ($result as $key => $res) {
       $date = DrupalDateTime::createFromTimestamp($res->created);
       $res->created = $date->format('d/m/Y');
-      $resultArr[] = $res;
       }
 
    $output = [
      '#theme' => 'page_ib_task_27',
-     '#resultArr' => $resultArr,
+     '#result' => $result,
      ];
 
     return $output;
