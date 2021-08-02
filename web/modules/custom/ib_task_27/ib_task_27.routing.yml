@@ -1,0 +1,7 @@
+ib_task_27.routing:
+  path: '/ib-task-27'
+  defaults:
+    _title: 'My Five Node'
+    _controller: '\Drupal\ib_task_27\Controller\IbTask27Controller::index'
+  requirements:
+    _permission: 'access content'
