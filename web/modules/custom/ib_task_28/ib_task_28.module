@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function ib_task_28_theme() {
+  return [
+    'block_ib_task_28' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+      ],
+    ],
+  ];
+}

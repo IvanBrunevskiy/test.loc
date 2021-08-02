@@ -1,0 +1,7 @@
+ib_task_28.routing:
+  path: '/ib-task-28/{id}'
+  defaults:
+    _title: 'My routing blocks'
+    _controller: '\Drupal\ib_task_28\Controller\IbTask28Controller::index'
+  requirements:
+    _permission: 'access content'
