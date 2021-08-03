@@ -1,0 +1,5 @@
+services:
+  example.access_checker:
+    class: Drupal\ib_task_30\Access\CustomAccessCheck
+    tags:
+      - { name: access_check, applies_to: _example_access_check }
