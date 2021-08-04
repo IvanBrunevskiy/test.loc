@@ -2,6 +2,7 @@
 
 namespace Drupal\ib_task_30\Access;
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\Access\AccessInterface;
@@ -19,23 +20,22 @@ class CustomAccessCheck implements AccessInterface {
    *
    * @return \Drupal\Core\Access\AccessResultInterface
    *   The access result.
+   *
+   * @var  $acces
+   *    A variable that defines the access rights.
    */
   public function access(AccountInterface $account) {
     $current_time = \Drupal::time()->getCurrentTime();
-    $date_output = date('i', $current_time);
+    $get_minute = DrupalDateTime::createFromTimestamp($current_time)->format('i');
+    $manager_anonymous = (in_array('manager', $account->getRoles()) || in_array('anonymous', $account->getRoles()));
 
-    if (in_array('manager', $account->getRoles())) {
-      $manager = TRUE;
+    if (($get_minute % 2) == 0) {
+      $acces = AccessResult::allowedIf(in_array('manager', $account->getRoles()));
     }
-    else {
-      $auth = TRUE;
+    elseif (($get_minute % 2) !== 0) {
+      $acces = AccessResult::allowedIf(!$manager_anonymous);
     }
 
-    if (($date_output % 2) == 0) {
-      return AccessResult::allowedIf($manager);
-    }
-    elseif (($date_output % 2) !== 0) {
-      return AccessResult::allowedIf($auth);
-    }
+    return $acces;
   }
 }
