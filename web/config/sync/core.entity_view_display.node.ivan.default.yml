@@ -1,0 +1,29 @@
+uuid: 9f46909c-30f9-4113-9a39-cf88c3dc2f68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ivan.body
+    - node.type.ivan
+  module:
+    - text
+    - user
+id: node.ivan.default
+targetEntityType: node
+bundle: ivan
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
