@@ -6,14 +6,10 @@
  */
 function ib_task_93_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
   $get_title_array = $entity->get('title')->getValue();
-  $node_title = NULL;
-
-  foreach ($get_title_array as $value) {
-    foreach ($value as $title) {
-      $node_title = $title;
-    }
-  }
-
+  $node_title = $get_title_array[0]['value'];
   $country = \Drupal::config('ib_task_93.settings')->get('ib_task_93_country');
-  $entity->setTitle($node_title . " " . $country);
+
+  if ($entity->isNew()) {
+    $entity->setTitle($node_title . ' ' . $country);
+  }
 }
