@@ -4,25 +4,16 @@
  * Implements hook_ENTITY_TYPE_insert().
  * @param \Drupal\Core\Entity\EntityInterface $entity
  */
-function ib_task_93_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
+function ib_task_93_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  $get_title_array = $entity->get('title')->getValue();
+  $node_title = NULL;
 
-  $getTitleNode = $entity->toArray();
-  $nodeTitle = NULL;
-
-  foreach ($getTitleNode['title'] as $value) {
-    $nodeTitle = $value['value'];
+  foreach ($get_title_array as $value) {
+    foreach ($value as $title) {
+      $node_title = $title;
+    }
   }
 
-  $config = \Drupal::config('ib_task_93.settings');
-  $country = $config->getRawData();
-  $getCountry['title'] = $country['ib_task_93_country'];
-
-  \Drupal::database()
-    ->update('node_field_revision')
-    ->fields([
-      'title' => $nodeTitle . " " . $getCountry['title'],
-    ])
-    ->condition('nid', $entity
-      ->id())
-    ->execute();
+  $country = \Drupal::config('ib_task_93.settings')->get('ib_task_93_country');
+  $entity->setTitle($node_title . " " . $country);
 }
