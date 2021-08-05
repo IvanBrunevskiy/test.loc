@@ -1,0 +1,11 @@
+uuid: dd1b147c-4639-4ee8-8397-a8728992dd29
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ivan
+id: node.ivan
+target_entity_type_id: node
+target_bundle: ivan
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,7 @@
+ib_task_93.admin_settings:
+  path: '/admin/config/ib_task_93'
+  defaults:
+    _form: '\Drupal\ib_task_93\Form\ModuleConfigurationForm'
+    _title: 'your_module configuration screen'
+  requirements:
+    _permission: 'administer site configuration'
