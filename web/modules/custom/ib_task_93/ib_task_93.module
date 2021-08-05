@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ib_task_93_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
+
+  $getTitleNode = $entity->toArray();
+  $nodeTitle = NULL;
+
+  foreach ($getTitleNode['title'] as $value) {
+    $nodeTitle = $value['value'];
+  }
+
+  $config = \Drupal::config('ib_task_93.settings');
+  $country = $config->getRawData();
+  $getCountry['title'] = $country['ib_task_93_country'];
+
+  \Drupal::database()
+    ->update('node_field_revision')
+    ->fields([
+      'title' => $nodeTitle . " " . $getCountry['title'],
+    ])
+    ->condition('nid', $entity
+      ->id())
+    ->execute();
+}
