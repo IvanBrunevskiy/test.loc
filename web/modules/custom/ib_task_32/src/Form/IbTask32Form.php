@@ -15,27 +15,27 @@ class IbTask32Form extends FormBase {
     $city_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('citylist');
     $country_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('countrylist');
 
-    $city = array();
+    $city = [];
     foreach ($city_terms as $city_term) {
       $city[$city_term->tid] = $city_term->name;
     }
 
-    $country = array();
+    $country = [];
     foreach ($country_terms as $country_term) {
       $country[$country_term->tid] = $country_term->name;
     }
 
-    $form['city'] = array(
+    $form['city'] = [
       '#type' => 'select',
       '#options' => $city,
       '#title' => $this->t('City'),
-    );
+    ];
 
-    $form['country'] = array(
+    $form['country'] = [
       '#type' => 'select',
       '#options' => $country,
       '#title' => $this->t('Country'),
-    );
+    ];
 
     $form['actions']['submit'] = [
       '#type' => 'submit',
@@ -46,14 +46,17 @@ class IbTask32Form extends FormBase {
   }
 
   public function getFormId() {
-    return 'ib_task_31_form';
+    return 'ib_task_32_form';
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $city_key = $form_state->getValue('city');
+    $country_key = $form_state->getValue('country');
     \Drupal::logger('ib_task_32')->notice('City - @city Country - @country.',
-      array(
-        '@city' => $form_state->getValue('city'),
-        '@country' => $form_state->getValue('country'),
-      ));
+
+      [
+        '@city' => $form['city']['#options'][$city_key],
+        '@country' => $form['country']['#options'][$country_key],
+      ]);
   }
 }

@@ -2,7 +2,7 @@ uuid: baf9fed4-5060-4102-8c50-4879a3661caf
 langcode: en
 status: true
 dependencies: {  }
-name: CityList
+name: Cities
 vid: citylist
 description: ''
 weight: -8
