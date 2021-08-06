@@ -5,4 +5,4 @@ dependencies: {  }
 name: Жанр
 vid: zhanr
 description: ''
-weight: 0
+weight: -5

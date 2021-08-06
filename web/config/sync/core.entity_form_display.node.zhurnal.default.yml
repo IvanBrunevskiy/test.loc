@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.zhurnal.body
+    - field.field.node.zhurnal.field_citylist
+    - field.field.node.zhurnal.field_country
     - field.field.node.zhurnal.field_magazine_author
     - field.field.node.zhurnal.field_magazine_circulation
     - field.field.node.zhurnal.field_magazine_cover
@@ -38,6 +40,26 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_citylist:
+    weight: 134
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_country:
+    weight: 133
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_magazine_author:
     weight: 128
     settings:

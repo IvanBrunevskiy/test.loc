@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'book genre'
 vid: genres
 description: ''
-weight: 0
+weight: -9
