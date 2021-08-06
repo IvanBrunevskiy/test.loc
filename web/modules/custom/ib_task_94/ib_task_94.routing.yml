@@ -1,0 +1,7 @@
+ib_task_94.routing:
+  path: '/ib-task-94'
+  defaults:
+    _title: 'My title'
+    _controller: '\Drupal\ib_task_94\Controller\IbTask94Controller::index'
+  requirements:
+    _permission: 'access content'
