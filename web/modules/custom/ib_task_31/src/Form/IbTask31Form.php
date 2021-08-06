@@ -38,10 +38,10 @@ class IbTask31Form extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::logger('ib_task_31')->notice('Email - @email Name - %username.',
+    \Drupal::logger('ib_task_31')->notice('Email - @email Name - @username.',
       array(
         '@email' => $form_state->getValue('email'),
-        '%username' => $form_state->getValue('username'),
+        '@username' => $form_state->getValue('username'),
       ));
   }
 }
