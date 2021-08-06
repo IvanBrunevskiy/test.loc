@@ -1,0 +1,31 @@
+uuid: 791a5a42-0abb-45ff-ad54-8f9fa432cabc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.citylist.field_country
+    - taxonomy.vocabulary.citylist
+  module:
+    - text
+id: taxonomy_term.citylist.default
+targetEntityType: taxonomy_term
+bundle: citylist
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_country:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true
