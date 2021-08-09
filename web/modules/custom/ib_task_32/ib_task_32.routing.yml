@@ -1,0 +1,7 @@
+ib_task_32.routing:
+  path: '/ib-task-32'
+  defaults:
+    _title: 'Taxonomy form'
+    _form: '\Drupal\ib_task_32\Form\IbTask32Form'
+  requirements:
+    _permission: 'access content'

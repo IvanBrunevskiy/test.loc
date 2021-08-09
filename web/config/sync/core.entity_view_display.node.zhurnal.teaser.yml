@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.zhurnal.body
+    - field.field.node.zhurnal.field_citylist
+    - field.field.node.zhurnal.field_country
     - field.field.node.zhurnal.field_magazine_author
     - field.field.node.zhurnal.field_magazine_circulation
     - field.field.node.zhurnal.field_magazine_cover
@@ -34,6 +36,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_citylist: true
+  field_country: true
   field_magazine_author: true
   field_magazine_circulation: true
   field_magazine_cover: true
