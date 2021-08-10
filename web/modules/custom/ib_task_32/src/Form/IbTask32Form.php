@@ -23,8 +23,8 @@ class IbTask32Form extends FormBase
     $form['country'] = [
       '#type' => 'select',
       '#empty_value' => '',
-      '#empty_option' => '- Select a value -',
-      '#default_value' => (isset($values['country']) ? $values['country'] : ''),
+      '#empty_option' => '- Select a country -',
+      '#default_value' => '',
       '#options' => $country,
       '#title' => $this->t('Country'),
       '#ajax' => [
@@ -34,28 +34,25 @@ class IbTask32Form extends FormBase
       ],
     ];
 
+    if (isset($values['country'])) {
+      $cities_entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+        ->loadByProperties(['vid' => 'citylist', 'field_country' => $values['country']]);
+
+      $cities_of_country = [];
+      foreach ($cities_entity as $city) {
+        $cities_of_country[] = $city->name->value;
+      }
+    }
+
     $form['city'] = [
       '#type' => 'select',
-      '#options' => (isset($cities_of_country) ? $cities_of_country : ['Choose the country']),
+      '#options' => ($cities_of_country) ? $cities_of_country : ['Choose the country'] ,
       '#title' => $this->t('City'),
       '#attributes' => ['id' => 'edit-city',],
       '#prefix' => '<div id="edit-city">',
       '#suffix' => '</div>'
     ];
-
-
-if (isset($values['country'])) {
-  $cities_entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-    ->loadByProperties(['vid' => 'citylist', 'field_country' => $values['country']]);
-
-  $cities_of_country = [];
-  foreach ($cities_entity as $city) {
-    $cities_of_country[] = $city->name->value;
-  }
-
-    $form['city']['#options'] = $cities_of_country;
-}
-
+    
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Send'),
