@@ -22,9 +22,7 @@ class IbTask32Form extends FormBase
 
     $form['country'] = [
       '#type' => 'select',
-      '#empty_value' => '',
       '#empty_option' => '- Select a country -',
-      '#default_value' => '',
       '#options' => $country,
       '#title' => $this->t('Country'),
       '#ajax' => [
@@ -42,17 +40,20 @@ class IbTask32Form extends FormBase
       foreach ($cities_entity as $city) {
         $cities_of_country[] = $city->name->value;
       }
+
+    }else {
+      $cities_of_country[] = 'Choose the country';
     }
 
     $form['city'] = [
       '#type' => 'select',
-      '#options' => ($cities_of_country) ? $cities_of_country : ['Choose the country'] ,
+      '#options' => $cities_of_country,
       '#title' => $this->t('City'),
       '#attributes' => ['id' => 'edit-city',],
       '#prefix' => '<div id="edit-city">',
       '#suffix' => '</div>'
     ];
-    
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Send'),
