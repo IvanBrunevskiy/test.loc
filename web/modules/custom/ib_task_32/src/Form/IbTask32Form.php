@@ -13,14 +13,8 @@ class IbTask32Form extends FormBase
 {
 
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $city_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('citylist');
     $country_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('countrylist');
-
-    $city = [];
-    foreach ($city_terms as $city_term) {
-      $city[$city_term->tid] = $city_term->name;
-    }
-
+    $values = $form_state->getValues();
     $country = [];
     foreach ($country_terms as $country_term) {
       $country[$country_term->tid] = $country_term->name;
@@ -33,35 +27,34 @@ class IbTask32Form extends FormBase
       '#default_value' => (isset($values['country']) ? $values['country'] : ''),
       '#options' => $country,
       '#title' => $this->t('Country'),
-      '#ajax' => array(
+      '#ajax' => [
         'callback' => [$this, 'mySelectChange'],
         'event' => 'change',
         'wrapper' => 'edit-city',
-      ),
+      ],
     ];
 
     $form['city'] = [
       '#type' => 'select',
-      '#options' => ['Choose the country'],
+      '#options' => (isset($cities_of_country) ? $cities_of_country : ['Choose the country']),
+      '#title' => $this->t('City'),
+      '#attributes' => ['id' => 'edit-city',],
+      '#prefix' => '<div id="edit-city">',
+      '#suffix' => '</div>'
     ];
 
-    $values = $form_state->getValues();
-    if (!empty($values['country'])) {
-    $cities = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-      ->loadByProperties(['vid' => 'citylist', 'field_country' => $values['country']]);
-    $cities_of_country = [];
 
-      foreach ($cities as $city_id) {
-        foreach ($city as $key => $value) {
-          if ($city_id->id() == $key) {
-            $cities_of_country[] = $value;
-          }
-        }
-      }
+if (isset($values['country'])) {
+  $cities_entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+    ->loadByProperties(['vid' => 'citylist', 'field_country' => $values['country']]);
 
-      $form['city']['#title'] = 'City';
-      $form['city']['#options'] = $cities_of_country;
-    }
+  $cities_of_country = [];
+  foreach ($cities_entity as $city) {
+    $cities_of_country[] = $city->name->value;
+  }
+
+    $form['city']['#options'] = $cities_of_country;
+}
 
     $form['actions']['submit'] = [
       '#type' => 'submit',
@@ -81,7 +74,6 @@ class IbTask32Form extends FormBase
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $city_key = $form_state->getValue('city');
-
     $country_key = $form_state->getValue('country');
     \Drupal::logger('ib_task_32')->notice('City - @city Country - @country.',
 
