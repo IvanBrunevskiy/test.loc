@@ -7,6 +7,19 @@ function ib_task_35_form_alter(&$form, $form_state, $form_id) {
   $form['phone'] = [
     '#type' => 'tel',
     '#title' => t ('Your phone'),
+    '#description' => t('The phone number should be in Belarus format +375xxxxxxxxx or 80xxxxxxxxx.'),
+    '#placeholder' => '+375xxxxxxxxx',
+    '#weight' => -1000,
   ];
+
+  $form['#validate'][] = 'ib_task_35_settings_validate';
 }
 
+/**
+ * Custom validation callback.
+ */
+function ib_task_35_settings_validate(&$form, $form_state) {
+  if (!preg_match('/^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$/', $form_state->getValue('phone'))) {
+    $form_state->setErrorByName('tel', t('Incorrect phone number. Please verify the format phone.'));
+  }
+}
