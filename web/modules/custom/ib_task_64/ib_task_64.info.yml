@@ -1,0 +1,6 @@
+name: 'ib_task_64'
+description: 'Change class body'
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
+configure: ib_task_93.admin_settings

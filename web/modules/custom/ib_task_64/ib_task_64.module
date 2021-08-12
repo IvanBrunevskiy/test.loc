@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Preprocess variables for html templates.
+ * @param $variables
+ */
+function ib_task_64_preprocess_html(&$variables) {
+  if(\Drupal::routeMatch()->getParameter('node')) {
+    $nid = \Drupal::routeMatch()->getParameter('node')->id();
+
+    if (($nid % 2) == 0){
+      $variables['attributes']['class'][] = 'day';
+    }
+    else {
+      $variables['attributes']['class'][] = 'night';
+    }
+  }
+}
