@@ -23,4 +23,3 @@ regions:
 libraries-extend:
   bootstrap/framework:
     - mytheme/framework
-    - mytheme/bootstrap
