@@ -23,12 +23,12 @@
         "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
         "drupal/features": "^3.12",
+        "drupal/maillog": "^1.0@beta",
         "drupal/module_filter": "^3.2",
         "drupal/page_manager": "^4.0@beta",
         "drupal/panels": "^4.6",
         "drupal/twig_debugger": "^1.1",
-        "drupal/views_field_view": "^1.0@beta",
-        "drush/drush": "^10.5"
+        "drupal/views_field_view": "^1.0@beta"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -94,5 +94,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drush/drush": "^10.6"
     }
 }
