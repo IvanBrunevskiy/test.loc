@@ -21,42 +21,46 @@ function ib_task_70_mail($key, &$message, $params) {
  * Implements hook_entity_insert().
  */
 function ib_task_70_cron() {
-  $entity_users = \Drupal::entityTypeManager()->getStorage('user')->loadMultiple();
   $date_linux = \Drupal::time()->getCurrentTime();
-  $date_format = \Drupal::service('date.formatter')->format($date_linux, 'custom', 'm-d');;
-  $users_birthdays = [];
-  $users_mail = [];
-  $users_name = [];
-
-  foreach ($entity_users as $entity_user) {
-    $user1 = $entity_user->get('field_birthday')->value;
-    $users_birthdays[] = substr($user1, 5);
-    $users_mail[] = $entity_user->get('mail')->value;
-    $users_name[] = $entity_user->get('name')->value;
+  $date_format = \Drupal::service('date.formatter')->format($date_linux, 'custom', 'm-d');
+  $query = \Drupal::database()->select ('user__field_birthday', 'ufb');
+  $query -> addExpression("DATE_FORMAT(field_birthday_value, '%m-%d')", 'date_md');
+  $query -> addExpression("entity_id", 'user_id');
+  $query->where("DATE_FORMAT(ufb.field_birthday_value, '%m-%d') = '$date_format'");
+  $result = $query->execute()->fetchAll();
+  $users_id = [];
+  foreach ($result as $res){
+    $users_id[] = $res->user_id;
   }
 
-  foreach ($users_birthdays as $keys => $users_birthday) {
+  $entity_users = [];
+  foreach ($users_id as $user_id) {
+    $entity_users[] = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
+}
 
-    if ($users_birthday == $date_format) {
-      $mailManager = \Drupal::service('plugin.manager.mail');
-      $module = 'ib_task_70';
-      $key = 'birthday';
-      $to = $users_mail[$keys];
-      $params['message'] = 'Happy Birthday'. ' ' . $users_name[$keys];
-      $langcode = \Drupal::currentUser()->getPreferredLangcode();
-      $send = true;
-      $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+  $users_mail = [];
+  $users_name = [];
+  foreach ($entity_users as $keys => $entity_user) {
+    $users_mail[] = $entity_user->get('mail')->value;
+    $users_name[] = $entity_user->get('name')->value;
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'ib_task_70';
+    $key = 'birthday';
+    $to = $users_mail[$keys];
+    $params['message'] = 'Happy Birthday'. ' ' . $users_name[$keys];
+    $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    $send = true;
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
 
-      if ($result['result'] != true) {
-        $message = t('There was a problem sending your email notification to @email.', ['@email' => $to]);
-        \Drupal::logger('mail-log')->error($message);
+    if ($result['result'] != true) {
+      $message = t('There was a problem sending your email notification to @email.', ['@email' => $to]);
+      \Drupal::logger('mail-log')->error($message);
 
-        return;
-      }
-
-      $message = t('An email notification has been sent to @email ', ['@email' => $to]);
-      \Drupal::logger('mail-log')->notice($message);
+      return;
     }
+
+    $message = t('An email notification has been sent to @email ', ['@email' => $to]);
+    \Drupal::logger('mail-log')->notice($message);
   }
 }
 
