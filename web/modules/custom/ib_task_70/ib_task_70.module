@@ -25,18 +25,15 @@ function ib_task_70_cron() {
   $date_format = \Drupal::service('date.formatter')->format($date_linux, 'custom', 'm-d');
   $query = \Drupal::database()->select ('user__field_birthday', 'ufb');
   $query -> addExpression("DATE_FORMAT(field_birthday_value, '%m-%d')", 'date_md');
-  $query -> addExpression("entity_id", 'user_id');
+  $query -> addExpression('entity_id', 'user_id');
   $query->where("DATE_FORMAT(ufb.field_birthday_value, '%m-%d') = '$date_format'");
   $result = $query->execute()->fetchAll();
-  $users_id = [];
-  foreach ($result as $res){
-    $users_id[] = $res->user_id;
-  }
 
   $entity_users = [];
-  foreach ($users_id as $user_id) {
+  foreach ($result as $res){
+    $user_id = $res->user_id;
     $entity_users[] = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
-}
+  }
 
   $users_mail = [];
   $users_name = [];
