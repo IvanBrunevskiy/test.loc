@@ -22,8 +22,8 @@ function ib_task_70_mail($key, &$message, $params) {
  */
 function ib_task_70_cron() {
   $entity_users = \Drupal::entityTypeManager()->getStorage('user')->loadMultiple();
-  $date = \Drupal::time()->getCurrentTime();
-  $date_today = date('m-d', $date);
+  $date_linux = \Drupal::time()->getCurrentTime();
+  $date_format = \Drupal::service('date.formatter')->format($date_linux, 'custom', 'm-d');;
   $users_birthdays = [];
   $users_mail = [];
   $users_name = [];
@@ -37,7 +37,7 @@ function ib_task_70_cron() {
 
   foreach ($users_birthdays as $keys => $users_birthday) {
 
-    if ($users_birthday == $date_today) {
+    if ($users_birthday == $date_format) {
       $mailManager = \Drupal::service('plugin.manager.mail');
       $module = 'ib_task_70';
       $key = 'birthday';
