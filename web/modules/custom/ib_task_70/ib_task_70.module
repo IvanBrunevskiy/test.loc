@@ -28,19 +28,16 @@ function ib_task_70_cron() {
   $query -> addExpression('entity_id', 'user_id');
   $query->where('DATE_FORMAT(ufb.field_birthday_value, \'%m-%d\') =' . '\'' . $date_format . '\'');
   $results = $query->execute()->fetchAll();
-
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  
   foreach ($results as $result) {
     $user_id = $result->user_id;
     $entity_user = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
     $to = $entity_user->get('mail')->value;
     $users_name = $entity_user->get('name')->value;
-    $mailManager = \Drupal::service('plugin.manager.mail');
-    $module = 'ib_task_70';
-    $key = 'birthday';
     $params['message'] = 'Happy Birthday'. ' ' . $users_name;
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
-    $send = TRUE;
-    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    $result = $mailManager->mail('ib_task_70', 'birthday', $to, $langcode, $params, NULL, TRUE);
 
     if ($result['result'] != TRUE) {
       $message = t('There was a problem sending your email notification to @email.', ['@email' => $to]);
