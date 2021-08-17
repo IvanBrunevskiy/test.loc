@@ -32,18 +32,17 @@ function ib_task_70_cron() {
   foreach ($results as $result) {
     $user_id = $result->user_id;
     $entity_user = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
-    $users_mail = $entity_user->get('mail')->value;
+    $to = $entity_user->get('mail')->value;
     $users_name = $entity_user->get('name')->value;
     $mailManager = \Drupal::service('plugin.manager.mail');
     $module = 'ib_task_70';
     $key = 'birthday';
-    $to = $users_mail;
     $params['message'] = 'Happy Birthday'. ' ' . $users_name;
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
-    $send = true;
+    $send = TRUE;
     $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
 
-    if ($result['result'] != true) {
+    if ($result['result'] != TRUE) {
       $message = t('There was a problem sending your email notification to @email.', ['@email' => $to]);
       \Drupal::logger('mail-log')->error($message);
 
