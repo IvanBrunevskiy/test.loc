@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_update_N().
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function ib_task_39_update_9101(&$sandbox) {
+  $countries = [
+    'Belarus',
+    'Russia',
+    'Ukraine',
+    'Poland',
+    'USA',
+  ];
+
+  foreach($countries as $country) {
+  $term = Term::create([
+    'name' => $country,
+    'vid' => 'country',
+  ])->save();
+  }
+}
+

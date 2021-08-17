@@ -29,7 +29,7 @@ function ib_task_70_cron() {
   $query->where('DATE_FORMAT(ufb.field_birthday_value, \'%m-%d\') =' . '\'' . $date_format . '\'');
   $results = $query->execute()->fetchAll();
   $mailManager = \Drupal::service('plugin.manager.mail');
-  
+
   foreach ($results as $result) {
     $user_id = $result->user_id;
     $entity_user = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
