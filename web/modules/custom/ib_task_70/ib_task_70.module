@@ -5,8 +5,8 @@
  */
 function ib_task_70_mail($key, &$message, $params) {
   $options = [
-  'langcode' => $message['langcode'],
-];
+    'langcode' => $message['langcode'],
+    ];
 
   switch ($key) {
     case 'birthday':
@@ -24,27 +24,21 @@ function ib_task_70_cron() {
   $date_linux = \Drupal::time()->getCurrentTime();
   $date_format = \Drupal::service('date.formatter')->format($date_linux, 'custom', 'm-d');
   $query = \Drupal::database()->select ('user__field_birthday', 'ufb');
-  $query -> addExpression("DATE_FORMAT(field_birthday_value, '%m-%d')", 'date_md');
+  $query -> addExpression('DATE_FORMAT(field_birthday_value, \'%m-%d\')', 'date_md');
   $query -> addExpression('entity_id', 'user_id');
-  $query->where("DATE_FORMAT(ufb.field_birthday_value, '%m-%d') = '$date_format'");
-  $result = $query->execute()->fetchAll();
+  $query->where('DATE_FORMAT(ufb.field_birthday_value, \'%m-%d\') =' . '\'' . $date_format . '\'');
+  $results = $query->execute()->fetchAll();
 
-  $entity_users = [];
-  foreach ($result as $res){
-    $user_id = $res->user_id;
-    $entity_users[] = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
-  }
-
-  $users_mail = [];
-  $users_name = [];
-  foreach ($entity_users as $keys => $entity_user) {
-    $users_mail[] = $entity_user->get('mail')->value;
-    $users_name[] = $entity_user->get('name')->value;
+  foreach ($results as $result) {
+    $user_id = $result->user_id;
+    $entity_user = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
+    $users_mail = $entity_user->get('mail')->value;
+    $users_name = $entity_user->get('name')->value;
     $mailManager = \Drupal::service('plugin.manager.mail');
     $module = 'ib_task_70';
     $key = 'birthday';
-    $to = $users_mail[$keys];
-    $params['message'] = 'Happy Birthday'. ' ' . $users_name[$keys];
+    $to = $users_mail;
+    $params['message'] = 'Happy Birthday'. ' ' . $users_name;
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
     $send = true;
     $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
