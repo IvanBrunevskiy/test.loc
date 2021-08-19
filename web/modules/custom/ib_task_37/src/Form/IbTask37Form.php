@@ -76,11 +76,17 @@ class IbTask37Form extends FormBase {
     function ib_task_37_create_users($user_info) {
       $str = strpos($user_info[0], '@');
       $user_name = substr($user_info[0], 0, $str);
-      User::create([
-        'name' => $user_name,
-        'mail' => $user_info[0],
-        'pass' => $user_info[1],
-      ])->save();
+      $data_user  = \Drupal::entityTypeManager()->getStorage('user')
+        ->loadByProperties(['name' => $user_name]);
+
+        if (empty($data_user)) {
+          User::create([
+            'name' => $user_name,
+            'mail' => $user_info[0],
+            'pass' => $user_info[1],
+          ])->save();
+        }
+
     }
 
     /**
