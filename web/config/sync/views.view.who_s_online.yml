@@ -1,5 +1,5 @@
-uuid: 3218862c-3361-4ff1-9225-3cf197a6e5a9
-langcode: ru
+uuid: ffb451b0-272b-457f-be12-f0a8eeff9095
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,9 +7,9 @@ dependencies:
 _core:
   default_config_hash: oZCZq8MBtIG4FvWKljxJ2sY3jp-K6ts5Z5OCF7-p8ms
 id: who_s_online
-label: 'Блок «Кто на сайте?»'
+label: 'Who''s online block'
 module: user
-description: 'Показывает имена пользователей, которые были активными в последнее время, и общее число активных пользователей.'
+description: 'Shows the user names of the most recently active users, and the total number of active users.'
 tag: default
 base_table: users_field_data
 base_field: uid
@@ -17,7 +17,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: 'По умолчанию'
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -38,13 +38,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button: false
-          reset_button_label: Сбросить
-          exposed_sorts_label: 'Сортировать по'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: 'По возрастанию'
-          sort_desc_label: 'По убыванию'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         type: some
         options:
@@ -127,8 +127,8 @@ display:
           exposed: false
           expose:
             operator_id: access_op
-            label: 'Последнее посещение'
-            description: 'Пользователь считается находящимся на сайте в течение этого периода, начиная со времени последнего просмотра им страницы.'
+            label: 'Last access'
+            description: 'A user is considered online for this long after they have last viewed a page.'
             use_operator: false
             operator: access_op
             identifier: access
@@ -172,7 +172,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: access
-      title: 'Сейчас на сайте'
+      title: 'Who''s online'
       header:
         result:
           id: result
@@ -182,7 +182,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: 'В данный момент пользователей онлайн: @total.'
+          content: 'There are currently @total users online.'
           plugin_id: result
       footer: {  }
       empty:
@@ -195,7 +195,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'Сейчас 0 пользователей онлайн.'
+          content: 'There are currently 0 users online.'
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
@@ -210,11 +210,11 @@ display:
   who_s_online_block:
     display_plugin: block
     id: who_s_online_block
-    display_title: 'Сейчас на сайте'
+    display_title: 'Who''s online'
     position: 1
     display_options:
-      block_description: 'Сейчас на сайте'
-      display_description: 'Список пользователей, авторизированных в данный момент.'
+      block_description: 'Who''s online'
+      display_description: 'A list of users that are currently logged in.'
       display_extenders: {  }
     cache_metadata:
       contexts:

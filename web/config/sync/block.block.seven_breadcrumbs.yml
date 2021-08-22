@@ -1,5 +1,5 @@
-uuid: 6789ec3c-d0d6-425d-a68b-fd2b17065eae
-langcode: ru
+uuid: a6cc7f9e-43de-4b82-b626-a49910a44ff8
+langcode: en
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
-  label: 'Строка навигации'
+  label: Breadcrumbs
   provider: system
   label_display: '0'
 visibility: {  }

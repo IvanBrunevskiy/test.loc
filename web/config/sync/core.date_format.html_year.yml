@@ -1,10 +1,10 @@
-uuid: b88a3431-000c-41b8-a900-42c535c1af79
-langcode: ru
+uuid: 03d983e7-03c7-4540-b346-9bf23ce706c2
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: OjekiQuX9RbVQ2_8jOHBL94RgYLePqX7wpfNGgcQzrk
 id: html_year
-label: 'Год HTML'
+label: 'HTML Year'
 locked: true
 pattern: 'Y'

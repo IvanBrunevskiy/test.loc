@@ -1,0 +1,15 @@
+uuid: 0ad7dd63-d6fc-49f5-b1a8-792754d4449b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ib_task_9
+_core:
+  default_config_hash: WW67uC3oP1ILCQtHIhOHJDtCapowaVBUv1RrBIK0244
+id: ib_task_9
+label: Ivan
+description: 'Some Migration examples for article.'
+source_type: CSV
+module: null
+shared_configuration: null

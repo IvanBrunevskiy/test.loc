@@ -1,5 +1,5 @@
-uuid: ff26d9a0-2069-4176-826f-dbe700f9e9a4
-langcode: ru
+uuid: 71f3ab72-2975-48cc-a91d-70f7c9e4a47d
+langcode: en
 status: true
 dependencies:
   config:
@@ -25,5 +25,4 @@ content:
   links:
     weight: 101
     region: content
-hidden:
-  langcode: true
+hidden: {  }

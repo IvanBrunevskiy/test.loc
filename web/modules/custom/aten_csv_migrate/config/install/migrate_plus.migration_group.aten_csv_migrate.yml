@@ -1,0 +1,8 @@
+id: aten_csv_migrate
+label: Ivan Articles
+description: Some Migration examples for article.
+source_type: CSV
+dependencies:
+  enforced:
+    module:
+      - aten_csv_migrate

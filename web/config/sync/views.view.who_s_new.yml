@@ -1,5 +1,5 @@
-uuid: 5df5cffa-571c-4c89-855b-842ecbe1a488
-langcode: ru
+uuid: 9565583a-3f39-4749-ae11-aed231c31e9e
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,9 +7,9 @@ dependencies:
 _core:
   default_config_hash: hdAKtAm0H-umA4Nzn0i1bquaj5iPn3daD_7u-nzFRhM
 id: who_s_new
-label: 'Новые пользователи'
+label: 'Who''s new'
 module: user
-description: 'Показывает список новых учётных записей пользователей на сайте.'
+description: 'Shows a list of the newest user accounts on the site.'
 tag: default
 base_table: users_field_data
 base_field: uid
@@ -17,7 +17,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: 'По умолчанию'
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -38,13 +38,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button: false
-          reset_button_label: Сбросить
-          exposed_sorts_label: 'Сортировать по'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: 'По возрастанию'
-          sort_desc_label: 'По убыванию'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         type: some
         options:
@@ -163,7 +163,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: created
-      title: 'Новые пользователи'
+      title: 'Who''s new'
       header: {  }
       footer: {  }
       empty: {  }
@@ -180,12 +180,12 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: 'Новые пользователи'
+    display_title: 'Who''s new'
     position: 1
     display_options:
-      display_description: 'Список новых пользователей'
-      block_description: 'Новые пользователи'
-      block_category: Пользователь
+      display_description: 'A list of new users'
+      block_description: 'Who''s new'
+      block_category: User
       display_extenders: {  }
     cache_metadata:
       contexts:

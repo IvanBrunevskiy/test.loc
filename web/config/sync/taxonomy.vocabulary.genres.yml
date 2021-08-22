@@ -1,8 +1,0 @@
-uuid: 7ac435f0-33cd-4f8a-8bd8-510fd895fe29
-langcode: en
-status: true
-dependencies: {  }
-name: 'book genre'
-vid: genres
-description: ''
-weight: -9

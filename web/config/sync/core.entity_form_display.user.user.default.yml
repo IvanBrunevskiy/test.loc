@@ -1,11 +1,13 @@
-uuid: 566c3c6d-3abf-41ec-b803-541d1fd09550
-langcode: ru
+uuid: c3176aba-6117-47d7-8ab0-1cde0ba40116
+langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_birthday
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - datetime
     - image
     - user
 _core:
@@ -21,6 +23,12 @@ content:
   contact:
     weight: 5
     region: content
+  field_birthday:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   language:
     weight: 0
     region: content
@@ -35,5 +43,4 @@ content:
     third_party_settings: {  }
     weight: -1
     region: content
-hidden:
-  langcode: true
+hidden: {  }

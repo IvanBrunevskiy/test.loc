@@ -1,11 +1,10 @@
-uuid: ca34f518-49ad-4ef9-88b1-67b8abeb858a
-langcode: ru
+uuid: 4c63c5dc-94a2-4d34-bef8-9ddb8a1da062
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_country
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
@@ -44,16 +43,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_country:
-    weight: 121
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_image:
     type: image_image
     weight: 4
@@ -71,13 +60,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
     third_party_settings: {  }
   path:
     type: path

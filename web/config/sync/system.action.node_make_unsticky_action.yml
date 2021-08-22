@@ -1,5 +1,5 @@
-uuid: be84532f-76be-421e-bc75-079d5a75bed9
-langcode: ru
+uuid: 12baa172-0417-4f40-bd1e-92ec7d1d4422
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: lDM9mvIGAu8Sw8rt-uCO4Sr7yX5VPrDPxYcawkbKd6k
 id: node_make_unsticky_action
-label: 'Отменить прикрепление материала вверху списков'
+label: 'Make content unsticky'
 type: node
 plugin: node_make_unsticky_action
 configuration: {  }

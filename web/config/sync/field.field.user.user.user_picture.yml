@@ -1,5 +1,5 @@
-uuid: ac56f788-9553-4c49-aa07-b6f91a123be7
-langcode: ru
+uuid: c98b964e-f85d-4c8f-8cf6-2d92bacab46d
+langcode: en
 status: true
 dependencies:
   config:
@@ -13,8 +13,8 @@ id: user.user.user_picture
 field_name: user_picture
 entity_type: user
 bundle: user
-label: Изображение
-description: 'Ваше виртуальное лицо или изображение'
+label: Picture
+description: 'Your virtual face or picture.'
 required: false
 translatable: true
 default_value: {  }

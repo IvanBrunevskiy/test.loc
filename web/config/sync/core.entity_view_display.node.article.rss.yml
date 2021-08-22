@@ -1,12 +1,11 @@
-uuid: 052025f6-b6c4-4c0f-bc55-9037eecbe409
-langcode: ru
+uuid: 4dd72461-9c51-483c-8c4b-0f1e8d92e1cb
+langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_country
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - node.type.article
@@ -25,7 +24,5 @@ content:
 hidden:
   body: true
   comment: true
-  field_country: true
   field_image: true
   field_tags: true
-  langcode: true
