@@ -1,8 +1,0 @@
-uuid: 08072ae7-9572-4a3e-873b-3cb2599364b2
-langcode: ru
-status: true
-dependencies: {  }
-name: Жанр
-vid: zhanr
-description: ''
-weight: -5

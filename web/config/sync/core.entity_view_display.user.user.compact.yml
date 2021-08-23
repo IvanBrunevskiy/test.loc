@@ -1,9 +1,10 @@
-uuid: d36405d6-8575-4377-8c14-46f0a55347aa
-langcode: ru
+uuid: 1c959581-57c5-4790-af0c-74556ee5d46c
+langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_birthday
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -26,5 +27,5 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
-  langcode: true
+  field_birthday: true
   member_for: true

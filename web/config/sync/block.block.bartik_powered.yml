@@ -1,5 +1,5 @@
-uuid: d2f8393d-4724-4781-ab12-b5a89be7ae06
-langcode: ru
+uuid: 073d5fa2-1c82-42ca-8ea8-47df0472af5a
+langcode: en
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_powered_by_block
 settings:
   id: system_powered_by_block
-  label: 'Сделано на Drupal'
+  label: 'Powered by Drupal'
   provider: system
   label_display: '0'
 visibility: {  }

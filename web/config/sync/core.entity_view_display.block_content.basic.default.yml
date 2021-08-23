@@ -1,5 +1,5 @@
-uuid: 9257e17a-2a8a-46c7-a7ee-095328e68b66
-langcode: ru
+uuid: 8864e888-e420-464d-b903-54b2e1e3c234
+langcode: en
 status: true
 dependencies:
   config:
@@ -21,5 +21,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  langcode: true
+hidden: {  }

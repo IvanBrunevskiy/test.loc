@@ -1,10 +1,10 @@
-uuid: bb310a91-c72b-4f04-b736-e341c44a29c1
-langcode: ru
+uuid: 6f9573e2-be29-403d-929d-d56bdd1558ad
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: oz6NyPDAB4HB6N9hgH2LwNVtCd-sXbMG1fbn5KsRIDI
-name: 'Ограниченный HTML'
+name: 'Restricted HTML'
 format: restricted_html
 weight: 1
 filters:

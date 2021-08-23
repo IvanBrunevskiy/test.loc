@@ -1,11 +1,11 @@
-uuid: cae150fa-58b9-4f7d-b464-04dd62ff7efc
-langcode: ru
+uuid: bab5bf21-9997-4c47-bc0d-dbba308755e9
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
-label: 'Аутентифицированный пользователь'
+label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:

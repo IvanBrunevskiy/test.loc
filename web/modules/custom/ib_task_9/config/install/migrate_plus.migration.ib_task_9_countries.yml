@@ -1,0 +1,13 @@
+id: ib_task_9_countries
+label: 'Taxonomy term migration countries'
+migration_group: ib_task_9
+source:
+  plugin: csv
+  path: 'modules/custom/ib_task_9/sources/countries.csv'
+  header_row_count: 1
+  ids: [id]
+process:
+  name: Countries
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: countries

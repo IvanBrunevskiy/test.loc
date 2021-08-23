@@ -1,8 +1,0 @@
-uuid: 7ba4860e-08f2-4e11-ae0d-aea0d6856a15
-langcode: en
-status: true
-dependencies: {  }
-name: CountryList
-vid: countrylist
-description: ''
-weight: -7

@@ -1,10 +1,10 @@
-uuid: 99b79ca3-0eeb-4ee4-97f8-b2c5f36ac6e6
-langcode: ru
+uuid: 34b64769-a2fb-4f67-baa0-8b8d79fa9b66
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
-name: 'Простой текст'
+name: 'Plain text'
 format: plain_text
 weight: 10
 filters:

@@ -1,12 +1,11 @@
-uuid: 3e3f0cd2-8404-4f24-9fc8-52572902ea7c
-langcode: ru
+uuid: e9958c53-0aea-410e-badf-9c5ac72e0d79
+langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_country
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.large
@@ -39,14 +38,6 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  field_country:
-    weight: 111
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_image:
     type: image
     weight: -1
@@ -69,5 +60,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  langcode: true
+hidden: {  }

@@ -1,5 +1,5 @@
-uuid: cabee605-dd69-46b6-b50f-7f37ce2ec246
-langcode: ru
+uuid: 980bb39c-58ab-4ec5-bed0-ccc12d60fc67
+langcode: en
 status: true
 dependencies:
   config:
@@ -11,9 +11,9 @@ dependencies:
 _core:
   default_config_hash: HAnuLuk87TQ6QDwuJNjLTJYoBftdp6XtJh8RdBx3-TY
 id: frontpage
-label: 'Главная страница'
+label: Frontpage
 module: node
-description: 'Все материалы, выведенные на главную страницу.'
+description: 'All content promoted to the front page.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -30,7 +30,7 @@ display:
       empty:
         area_text_custom:
           admin_label: ''
-          content: 'Материалов для отображения на главной странице еще не создано.<br>Следуйте <a target="_blank" href="https://www.drupal.org/ru/docs/user_guide/ru/index.html">Руководству Пользователя</a> для начала создания сайта.'
+          content: 'No front page content has been created yet.<br/>Follow the <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">User Guide</a> to start building your site.'
           empty: true
           field: area_text_custom
           group_type: group
@@ -60,18 +60,18 @@ display:
           admin_label: ''
           label: ''
           empty: true
-          title: 'Приветствуем на сайте [site:name]'
+          title: 'Welcome to [site:name]'
           plugin_id: title
       exposed_form:
         type: basic
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button: false
-          reset_button_label: Сбросить
-          exposed_sorts_label: 'Сортировать по'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: 'По возрастанию'
-          sort_desc_label: 'По убыванию'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       filters:
         promote:
           admin_label: ''
@@ -177,17 +177,17 @@ display:
           total_pages: 0
           expose:
             items_per_page: false
-            items_per_page_label: 'Элементов на страницу'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Все -'
+            items_per_page_options_all_label: '- All -'
             offset: false
-            offset_label: Пропустить
+            offset_label: Offset
           tags:
-            previous: '‹ Предыдущий'
-            next: 'Следующий ›'
-            first: '« Первая'
-            last: 'Последняя »'
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
           quantity: 9
       query:
         type: views_query
@@ -246,7 +246,7 @@ display:
       arguments: {  }
       display_extenders: {  }
     display_plugin: default
-    display_title: 'По умолчанию'
+    display_title: Default
     id: default
     position: 0
     cache_metadata:
@@ -260,7 +260,7 @@ display:
   feed_1:
     display_plugin: feed
     id: feed_1
-    display_title: 'Поток данных'
+    display_title: Feed
     position: 2
     display_options:
       sitename_title: true
@@ -297,7 +297,7 @@ display:
       path: node
       display_extenders: {  }
     display_plugin: page
-    display_title: Страница
+    display_title: Page
     id: page_1
     position: 1
     cache_metadata:

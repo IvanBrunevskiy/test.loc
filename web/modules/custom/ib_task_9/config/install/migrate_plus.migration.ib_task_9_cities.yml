@@ -1,0 +1,20 @@
+id: ib_task_9_cities
+label: 'Taxonomy term migration cities'
+migration_group: ib_task_9
+source:
+  plugin: csv
+  path: 'modules/custom/ib_task_9/sources/cities.csv'
+  header_row_count: 1
+  ids: [id]
+process:
+  field_country:
+      plugin: migration_lookup
+      migration: ib_task_9_countries
+      source: Country_id
+  name: Cities
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: cities
+migration_dependencies:
+    required:
+      - ib_task_9_countries

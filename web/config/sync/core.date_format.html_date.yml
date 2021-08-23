@@ -1,10 +1,10 @@
-uuid: 36e952f4-4e1e-433d-b667-baf3c7eafc2a
-langcode: ru
+uuid: 9455f6df-56af-42de-9bec-d23b3d6f2da7
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: EOQltUQPmgc6UQ2rcJ4Xi_leCEJj5ui0TR-12duS-Tk
 id: html_date
-label: 'Дата HTML'
+label: 'HTML Date'
 locked: true
 pattern: Y-m-d

@@ -1,0 +1,8 @@
+id: ib_task_9
+label: Ivan
+description: My Migration.
+source_type: CSV
+dependencies:
+  enforced:
+    module:
+      - ib_task_9
