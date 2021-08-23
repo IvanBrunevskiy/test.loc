@@ -1,9 +1,0 @@
-type: module
-name: Aten CSV Migration
-description: 'Aten CSV Migration example.'
-package: Migration
-core_version_requirement: ^8.7.7 || ^9
-dependencies:
-  - drupal:migrate
-  - migrate_source_csv
-  - migrate_plus

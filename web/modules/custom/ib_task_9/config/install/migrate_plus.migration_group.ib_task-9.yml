@@ -1,6 +1,6 @@
 id: ib_task_9
 label: Ivan
-description: Some Migration examples for article.
+description: My Migration.
 source_type: CSV
 dependencies:
   enforced:

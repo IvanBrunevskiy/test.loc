@@ -1,6 +1,6 @@
-id: ib_task_9
-label: 'Custom term migration'
-migration_group: Ivan
+id: ib_task_9_countries
+label: 'Taxonomy term migration countries'
+migration_group: ib_task_9
 source:
   plugin: csv
   path: 'modules/custom/ib_task_9/sources/countries.csv'

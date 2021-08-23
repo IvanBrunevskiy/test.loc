@@ -1,13 +1,13 @@
-id: city
-label: 'Custom term migration'
-migration_group: Ivan
+id: ib_task_9_cities
+label: 'Taxonomy term migration cities'
+migration_group: ib_task_9
 source:
   plugin: csv
   path: 'modules/custom/ib_task_9/sources/cities.csv'
   header_row_count: 1
   ids: [id]
 process:
-  field_countries: Country_id
+  field_country: Country_id
   name: Cities
 destination:
   plugin: 'entity:taxonomy_term'
