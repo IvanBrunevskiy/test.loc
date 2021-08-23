@@ -7,8 +7,14 @@ source:
   header_row_count: 1
   ids: [id]
 process:
-  field_country: Country_id
+  field_country:
+      plugin: migration_lookup
+      migration: ib_task_9_countries
+      source: Country_id
   name: Cities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: cities
+migration_dependencies:
+    required:
+      - ib_task_9_countries
