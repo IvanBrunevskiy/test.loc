@@ -7,11 +7,16 @@ source:
   header_row_count: 1
   ids: [id]
 process:
+  name:
+    plugin: concat
+    source:
+      - Cities
+      - id
+    delimiter: '-'
   field_country:
       plugin: migration_lookup
       migration: ib_task_9_countries
       source: Country_id
-  name: Cities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: cities
