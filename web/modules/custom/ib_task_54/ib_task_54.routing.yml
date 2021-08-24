@@ -1,0 +1,7 @@
+ib_task_94.routing:
+  path: '/ib-task-54'
+  defaults:
+    _title: 'My page with js'
+    _controller: '\Drupal\ib_task_54\Controller\IbTask54Controller::index'
+  requirements:
+    _permission: 'access content'
