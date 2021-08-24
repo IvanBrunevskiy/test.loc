@@ -1,0 +1,5 @@
+name: 'ib_task_54'
+description: 'page with alert js'
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
