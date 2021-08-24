@@ -1,0 +1,17 @@
+id: ib_task_41_users
+label: 'Users migration'
+migration_group: ib_task_41
+source:
+  plugin: csv
+  path: 'modules/custom/ib_task_41/sources/users.csv'
+  header_row_count: 1
+  ids: [email]
+process:
+  name:
+    plugin: username
+    source: email
+  mail: email
+  pass: password
+destination:
+  plugin: 'entity:user'
+
