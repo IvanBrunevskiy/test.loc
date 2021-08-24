@@ -3,7 +3,7 @@ label: 'Users migration'
 migration_group: ib_task_41
 source:
   plugin: csv
-  path: 'modules/custom/ib_task_41/sources/users.csv'
+  path: 'modules/custom/ib_task_41/sources/users1.csv'
   header_row_count: 1
   ids: [email]
 process:
@@ -12,6 +12,12 @@ process:
     source: email
   mail: email
   pass: password
+  field_fullname:
+    plugin: concat
+    source:
+      - name
+      - lastname
+    delimiter: ' '
 destination:
   plugin: 'entity:user'
 
