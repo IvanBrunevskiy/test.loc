@@ -17,6 +17,7 @@ process:
     source:
       - name
       - lastname
+      - patronymic
     delimiter: ' '
 destination:
   plugin: 'entity:user'
