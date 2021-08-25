@@ -1,0 +1,20 @@
+uuid: 2d8fa8ea-8c25-4fe8-acaf-191c899eeb7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ib_task_55
+  theme:
+    - bartik
+id: ibtask55block
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: ib_task_55_block
+settings:
+  id: ib_task_55_block
+  label: 'ib Task 55 block'
+  provider: ib_task_55
+  label_display: visible
+visibility: {  }

@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_birthday
+    - field.field.user.user.field_fullname
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - datetime
     - image
+    - text
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -25,6 +27,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_fullname:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   member_for:
     weight: 5

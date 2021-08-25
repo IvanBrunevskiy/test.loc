@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_birthday
+    - field.field.user.user.field_fullname
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - datetime
     - image
+    - text
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -28,6 +30,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_fullname:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
     region: content
   language:
     weight: 0
