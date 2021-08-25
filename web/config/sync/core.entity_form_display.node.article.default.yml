@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_test1
     - image.style.thumbnail
     - node.type.article
   module:
     - comment
     - image
+    - paragraphs
     - path
     - text
 _core:
@@ -61,6 +63,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_test1:
+    type: entity_reference_paragraphs
+    weight: 121
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30

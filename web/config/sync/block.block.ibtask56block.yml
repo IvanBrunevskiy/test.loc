@@ -1,0 +1,20 @@
+uuid: 258baaba-19bc-4e94-859a-e5068167dd0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - ib_task_56
+  theme:
+    - bartik
+id: ibtask56block
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: ib_task_56_block
+settings:
+  id: ib_task_56_block
+  label: 'ib Task 56 block'
+  provider: ib_task_56
+  label_display: visible
+visibility: {  }
