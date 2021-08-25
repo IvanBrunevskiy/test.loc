@@ -1,0 +1,19 @@
+uuid: c04c1892-b2b2-4225-bb67-2af01b7aac55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_longitude
+    - paragraphs.paragraphs_type.paragraphstest
+id: paragraph.paragraphstest.field_longitude
+field_name: field_longitude
+entity_type: paragraph
+bundle: paragraphstest
+label: longitude
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
