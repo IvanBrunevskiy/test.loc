@@ -1,0 +1,7 @@
+ib_task_78.routing:
+  path: '/testcache'
+  defaults:
+    _title: 'user cache'
+    _controller: '\Drupal\ib_task_78\Controller\IbTask78Controller::index'
+  requirements:
+    _permission: 'access content'
