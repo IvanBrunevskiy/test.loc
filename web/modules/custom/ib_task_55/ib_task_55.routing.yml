@@ -1,0 +1,7 @@
+ib_task_55.routing:
+  path: '/ib-task-55'
+  defaults:
+    _title: 'My ajax link'
+    _controller: '\Drupal\ib_task_55\Controller\IbTask55Controller::index'
+  requirements:
+    _permission: 'access content'
