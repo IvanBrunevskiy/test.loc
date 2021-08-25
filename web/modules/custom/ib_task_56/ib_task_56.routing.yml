@@ -1,0 +1,7 @@
+ib_task_56.routing:
+  path: '/ib-task-56'
+  defaults:
+    _title: 'My model window'
+    _controller: '\Drupal\ib_task_56\Controller\IbTask56Controller::index'
+  requirements:
+    _permission: 'access content'
