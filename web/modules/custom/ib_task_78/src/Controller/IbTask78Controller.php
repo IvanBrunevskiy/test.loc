@@ -13,12 +13,15 @@ class IbTask78Controller extends ControllerBase {
     $account = User::load(\Drupal::currentUser()->id());
     $user_name = $account->get('name')->value;
 
-      if (\Drupal::cache()->get($user_name) == FALSE) {
+      if ((\Drupal::cache()->get($user_name) == FALSE) && $user_name != '') {
         \Drupal::cache()->set($user_name, $account);
+        $cache = \Drupal::cache()->get($user_name);
+        $name = $cache->cid;
+      }
+      else {
+        $name = 'anonymous';
       }
 
-    $cache = \Drupal::cache()->get($user_name);
-    $name = $cache->cid;
     $output['#markup'] = 'Now ' . $name . ' is logged in now';
 
     return $output;
