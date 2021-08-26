@@ -31,6 +31,8 @@
         "drupal/page_manager": "^4.0@beta",
         "drupal/panels": "^4.6",
         "drupal/paragraphs": "^1.12",
+        "drupal/token": "^1.9",
+        "drupal/token_filter": "^1.2",
         "drupal/twig_debugger": "^1.1",
         "drupal/views_field_view": "^1.0@beta"
     },
